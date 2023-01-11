@@ -17,29 +17,17 @@ class Solution {
     public boolean isValidBST(TreeNode root) {
         if(root==null){
             return true;
-        } else if(isSubBSTLesser(root.left, root.val)
+        } else return isSubBSTLesser(root.left, root.val)
                 && isSubBSTGreater(root.right, root.val)
                 && isValidBST(root.left)
-                && isValidBST(root.right)){
-            return true;
-        }else{
-            return false;
-        }
+                && isValidBST(root.right);
     }
-    public boolean isSubBSTLesser(TreeNode root, int val){
+    public static boolean isSubBSTLesser(TreeNode root, int val){
         if(root==null) return true;
-        if(root.val<val && isSubBSTLesser(root.left, val) && isSubBSTLesser(root.right, val)){
-            return true;
-        }else{
-            return false;
-        }
+        return root.val < val && isSubBSTLesser(root.left, val) && isSubBSTLesser(root.right, val);
     }
-    public boolean isSubBSTGreater(TreeNode root, int val){
+    public static boolean isSubBSTGreater(TreeNode root, int val){
         if(root==null) return true;
-        if(root.val>val && isSubBSTGreater(root.right, val) && isSubBSTGreater(root.left, val)){
-            return true;
-        }else{
-            return false;
-        }
+        return root.val > val && isSubBSTGreater(root.right, val) && isSubBSTGreater(root.left, val);
     }
 }
