@@ -26,18 +26,18 @@ class Solution {
             }else if(root.right==null || root.left==null){
                 return root.right==null ? root.left : root.right;
             }else{
-                TreeNode temp = new TreeNode(findMax(root.right));
+                TreeNode temp = new TreeNode(findMin(root.right));
                 root.val = temp.val;
                 root.right = deleteNode(root.right, temp.val);
             }
         }
         return root;
     }
-    public int findMax(TreeNode root){
+    public int findMin(TreeNode root){
         if(root==null) return -1;
         if(root.left==null){
             return root.val;
         }
-        return findMax(root.left);
+        return findMin(root.left);
     }
 }
