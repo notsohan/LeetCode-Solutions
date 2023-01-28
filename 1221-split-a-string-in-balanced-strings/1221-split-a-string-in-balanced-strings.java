@@ -7,7 +7,6 @@ class Solution {
             }else{
                 r--;
             }
-            
             if(r==0) count++;
         }
         return count;
