@@ -1,6 +1,6 @@
 class Solution {
     public int balancedStringSplit(String s) {
-        int r = 0, count = 0;
+        int count = 0, r = 0;
         for(int i=0; i<s.length(); i++){
             if(s.charAt(i)=='R'){
                 r++;
@@ -8,9 +8,7 @@ class Solution {
                 r--;
             }
             
-            if(r==0){
-                count++;
-            }
+            if(r==0) count++;
         }
         return count;
     }
