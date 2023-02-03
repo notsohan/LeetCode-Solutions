@@ -6,9 +6,8 @@ class Solution {
             hm.put(heights[i], names[i]);
         }
         Arrays.sort(heights);
-        for(int i=heights.length-1, j=0; i>=0; i--){
+        for(int i=heights.length-1, j=0; i>=0; i--, j++){
             name[j] = hm.get(heights[i]);
-            j++;
         }
         return name;
     }
