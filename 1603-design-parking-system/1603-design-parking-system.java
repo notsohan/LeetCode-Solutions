@@ -1,5 +1,5 @@
 class ParkingSystem {
-    private int[] size;
+    public int[] size;
     public ParkingSystem(int big, int medium, int small) {
         this.size = new int[]{big, medium, small};
     }
