@@ -1,6 +1,5 @@
 class Solution {
     public String firstPalindrome(String[] words) {
-        String s = "";
         for (String word : words) {
             if (isPalin(word)) {
                 return word;
